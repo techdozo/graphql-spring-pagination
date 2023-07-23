@@ -27,8 +27,8 @@ public class BookCatalogService {
     List<BookResult> bookResults;
     boolean hasNextPage;
     boolean hasPreviousPage;
-    String startCursor = "";
-    String endCursor = "";
+    String startCursor;
+    String endCursor;
 
     if (cursorInfo.hasCursors() && cursorInfo.hasNextPageCursor()) {
       bookResults =
