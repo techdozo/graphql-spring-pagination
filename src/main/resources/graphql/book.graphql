@@ -1,0 +1,28 @@
+type Query {
+    books (first: Int, after: String, last: Int, before: String): BookConnection
+
+}
+
+type BookConnection {
+    edges: [BookEdge]
+    pageInfo: BookInfo!
+}
+
+type BookInfo {
+    startCursor: String
+    endCursor: String
+    hasNextPage: Boolean!
+    hasPreviousPage: Boolean!
+}
+
+type BookEdge {
+    cursor: String
+    node: Book!
+}
+
+type Book {
+    id : ID
+    name : String
+    author: String
+    price: Float
+}
